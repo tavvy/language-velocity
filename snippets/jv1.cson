@@ -1,0 +1,94 @@
+'.source.velocity':
+  'count':
+    'prefix': 'count'
+    'body': '\n\\$velocityCount\n'
+  'date-format':
+    'prefix': 'dtformat'
+    'body': '\n\\$date.format( "${1:yyyyMMddHHmmss}" , ${0:\\$date.getSystemTime()} )\n'
+  'debug':
+    'prefix': 'debug'
+    'body': '\n#if(\\$!{request.getParameter(\'debug\')})\n<!--DEBUG:\n\t=====================================\n\tARQUIVO:    $TM_FILENAME\n\tCAMINHO:    $TM_FILEPATH\n\tLINHA:      $TM_LINE_NUMBER\n\t=====================================\n\t${0:${1:obj}: \\${${1}\\}}\n-->\n#end\n'
+  'else':
+    'prefix': 'el'
+    'body': '\n#else${0}\n'
+  'exist':
+    'prefix': 'exist'
+    'body': '\n\\$include.exists( "${0:filepath}" )\n'
+  'foreach':
+    'prefix': 'for'
+    'body': '\n#foreach( \\$${1:var} in \\$!{${2:coleção}} )\n\t${0}\n#end\n'
+  'getParameter':
+    'prefix': 'param'
+    'body': '\n\\$!{request.getParameter( "${1:nome do parâmetro}" )}\n'
+  'header':
+    'prefix': 'vm'
+    'body': '\n#!vm;utf-8\n'
+  'host':
+    'prefix': 'host'
+    'body': '\n\\$!{link.getHost()}\n'
+  'html_comment':
+    'prefix': '!'
+    'body': '\n<!-- ${0} -->\n'
+  'if-else':
+    'prefix': 'ifel'
+    'body': '\n#if( ${1:condition} )\n\t${2}\n#else\n\t${0}\n#end\n'
+  'if':
+    'prefix': 'if'
+    'body': '\n#if( ${1:condition} )\n\t${0}\n#end\n'
+  'ifparam':
+    'prefix': 'ifparam'
+    'body': '\n#if( \\$!{request.getParameter( "${1:nome do parâmetro}" )} )\n    ${0}\n#end\n'
+  'isempty':
+    'prefix': 'ept'
+    'body': '\nisEmpty()\n'
+  'isfeature':
+    'prefix': 'isfeature'
+    'body': '\n\\$_userAgent.isFeaturePhone()\n'
+  'issmart':
+    'prefix': 'issmart'
+    'body': '\n\\$_userAgent.isSmartPhone()\n'
+  'isweb':
+    'prefix': 'isweb'
+    'body': '\n\\$_userAgent.isWeb()\n'
+  'jsconsole':
+    'prefix': 'console'
+    'body': '\n<script>console.log( ${0} )</script>\n'
+  'jsonRequest':
+    'prefix': 'request'
+    'body': '\n\\$_json.request( ${0:url} )\n'
+  'jsonToString':
+    'prefix': 'jstos'
+    'body': '\n\\$_json.toString( ${0:obj} )\n'
+  'math-add':
+    'prefix': '+'
+    'body': '\n\\$math.add( \\$${1:number}, ${0:\\$number} )\n'
+  'math-mul':
+    'prefix': '*'
+    'body': '\n\\$math.mul( \\$${1:number}, ${0:\\$number} )\n'
+  'math-sub':
+    'prefix': '-'
+    'body': '\n\\$math.sub( \\$${1:number}, ${0:\\$number} )\n'
+  'parse':
+    'prefix': 'par'
+    'body': '\n#parse( "${0:url}" )\n'
+  'read':
+    'prefix': 'read'
+    'body': '\n$_reader.read( "${0:file}" )\n'
+  'set':
+    'prefix': 'set'
+    'body': '\n#set( \\$${1:var} = ${0:valor} )\n'
+  'setContentType':
+    'prefix': 'ctype'
+    'body': '\n\\$response.setContentType("${1:application/x-web-app-manifest+json}")${0}\n'
+  'stop':
+    'prefix': 'st'
+    'body': '\n#stop\n'
+  'system-date':
+    'prefix': 'sysdate'
+    'body': '\n\\$date.getSystemTime()\n'
+  'toUpperCase':
+    'prefix': '.upper'
+    'body': '\n.toUpperCase()\n'
+  'var':
+    'prefix': '$'
+    'body': '\n\\$${1:!}{${2:var}}\n'

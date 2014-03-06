@@ -1,4 +1,3 @@
-language-velocity
-=================
+# jv1 package
 
-atom java velocity syntax highlighting
+A short description of your package.
