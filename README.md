@@ -1,3 +1,3 @@
-# jv1 package
+# Velocity Syntax Highlighting for Atom
 
-A short description of your package.
+Java Velocity Template Language Syntax Highlighting for Atom
